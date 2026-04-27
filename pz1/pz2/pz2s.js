@@ -11,8 +11,15 @@ const cToF = createConverter(9/5, 32);
 const fToC = createConverter(5/9, -32 * 5/9);
 
 function runConverter() {
-  let temp = Number(prompt("Type tempreture:"));
-  let direction = prompt('Type convertion way: "C to F" or "F to C"');
+  let temp = Number(prompt("Type temperature:"));
+
+  if (isNaN(temp)) {
+    alert("Invalid input! Please enter a number.");
+    console.log("Fail. Incorrect input!");
+    return;
+  }
+
+  let direction = prompt('Type conversion way: "C to F" or "F to C"');
 
   let result;
 
@@ -25,7 +32,7 @@ function runConverter() {
     alert(`${temp}°F = ${result.toFixed(2)}°C`);
     console.log(`${temp}°F = ${result.toFixed(2)}°C`);
   } else {
-    alert("Incorrect convertion root!");
-    console.log("Fail.Incorrect root!");
+    alert("Incorrect conversion route!");
+    console.log("Fail. Incorrect route!");
   }
 }
