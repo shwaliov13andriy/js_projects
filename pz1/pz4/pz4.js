@@ -30,5 +30,7 @@ taskList.addEventListener("click", function (event) {
 }, false);
 
 taskList.addEventListener("click", function (event) {
-  console.log("Selected:", event.target);
+  if (event.target.tagName === "LI") {
+    console.log("Selected:", event.target.textContent);
+  }
 }, true);

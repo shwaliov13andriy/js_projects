@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f4f4f9;
+  color: #333;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+button {
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+#usersOutput {
+  margin-top: 15px;
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 5px;
+}
+
+.pokemon-card {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+}
+
+.pokemon-card h2 {
+  margin: 10px 0;
+  color: #2c3e50;
+}
+
+.pokemon-card p {
+  margin: 5px 0;
+}
