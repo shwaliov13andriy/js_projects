@@ -4,6 +4,8 @@ console.log("java script added");
 const taskInput = document.getElementById("taskInput");
 const addTaskButton = document.querySelector("#addTask");
 const taskList = document.getElementById("taskList");
+const deleteTaskButton = document.getElementById("deleteTask");
+const mainTitle = document.querySelector("h1");
 
 console.log(taskInput, addTaskButton, taskList);
 
@@ -34,3 +36,24 @@ taskList.addEventListener("click", function (event) {
     console.log("Selected:", event.target.textContent);
   }
 }, true);
+
+// mainTitle.addEventListener("click", function () {
+//   const newTitle = document.createElement("h1");
+//   newTitle.textContent = "Привіт";
+//   mainTitle.insertAdjacentElement("afterend", newTitle);
+//   newTitle.addEventListener("click", function () {
+//     console.log("Deleted h1:", newTitle.textContent);
+//     newTitle.remove();
+//   });
+// });
+
+// deleteTask.addEventListener("click", function () {
+//  if (event.target.tagName === "H1") {
+//     event.H1.remove();}
+//   });
+  deleteTaskButton.addEventListener("click", function () {
+  if (mainTitle) {
+    console.log("Deleted h1:", mainTitle.textContent);
+    mainTitle.remove();
+  }
+});

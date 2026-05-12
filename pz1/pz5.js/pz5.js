@@ -1,5 +1,6 @@
 "use strict";
-console.log("Підключено JavaScript для Практичної роботи №5");
+console.log("Підключено JavaScript для Практичної роботи #5");
+
 async function loadUsers() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -18,9 +19,9 @@ async function loadUsers() {
 }
 async function loadPokemon() {
   try {
-    const pokemonName = prompt("Type name or id of pokenon:");
+    const pokemonName = prompt("Tyep name or id of pokemon:");
     if (!pokemonName || pokemonName.trim() === "") {
-      alert("Type right name or id");
+      alert("Type right name or id!");
       return;
     }
 
@@ -30,14 +31,23 @@ async function loadPokemon() {
     if (!response.ok) throw new Error("Pokémon not found!");
 
     const data = await response.json();
+    const stats = {};
+    data.stats.forEach(stat => {
+      stats[stat.stat.name] = stat.base_stat;
+    });
+
     const card = `
       <div class="pokemon-card">
         <img src="${data.sprites.front_default}" alt="${data.name}">
         <h2>${data.name.toUpperCase()}</h2>
-        <p><strong>Id:</strong> ${data.id}</p>
-        <p><strong>Type:</strong> ${data.types.map(t => t.type.name).join(", ")}</p>
-        <p><strong>Height:</strong> ${data.height}</p>
-        <p><strong>Weight:</strong> ${data.weight}</p>
+        <p><strong>id:</strong> ${data.id}</p>
+        <p><strong>type:</strong> ${data.types.map(t => t.type.name).join(", ")}</p>
+        <p><strong>hp:</strong> ${stats.hp}</p>
+        <p><strong>attack:</strong> ${stats.attack}</p>
+        <p><strong>defence:</strong> ${stats.defense}</p>
+        <p><strong>speed:</strong> ${stats.speed}</p>
+        <p><strong>rarirty:</strong> ${data.base_experience}</p>
+        
       </div>
     `;
     document.getElementById("pokemonCard").innerHTML = card;
@@ -45,8 +55,11 @@ async function loadPokemon() {
   } catch (error) {
     console.error("Error:", error);
     document.getElementById("pokemonCard").innerHTML =
-      "<p style='color:red'>error: there is not such pockemon!</p>";
+      "<p style='color:red'>error: pockemon not found</p>";
   }
 }
 document.getElementById("loadUsers").addEventListener("click", loadUsers);
 document.getElementById("loadPokemon").addEventListener("click", loadPokemon);
+
+
+//<p><strong>special-attack:</strong> ${stats["special-attack"]}</p>

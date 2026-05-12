@@ -54,3 +54,6 @@ button:hover {
 .pokemon-card p {
   margin: 5px 0;
 }
+.pokemon-card p strong {
+  color: #3498db;
+}
