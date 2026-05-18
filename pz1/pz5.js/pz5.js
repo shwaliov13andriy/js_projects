@@ -47,7 +47,7 @@ async function loadPokemon() {
         <p><strong>defence:</strong> ${stats.defense}</p>
         <p><strong>speed:</strong> ${stats.speed}</p>
         <p><strong>rarirty:</strong> ${data.base_experience}</p>
-         <p><strong>special-attack:</strong> ${stats["special-attack"]}</p>
+        <p><strong>special attack:</strong> ${stats["special-attack"]}</p>
       </div>
     `;
     document.getElementById("pokemonCard").innerHTML = card;
@@ -58,8 +58,20 @@ async function loadPokemon() {
       "<p style='color:red'>error: pockemon not found</p>";
   }
 }
+async function loadPokemonCount() {
+  try {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1");
+    if (!response.ok) throw new Error("HTTP error " + response.status);
+
+    const data = await response.json();
+    document.getElementById("pokemonCount").innerHTML =
+      `<p><strong>total pokemon:</strong> ${data.count}</p>`;
+  } catch (error) {
+    console.error("error fetching count:", error);
+    document.getElementById("pokemonCount").textContent =
+      "error loading count!";
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {loadPokemonCount();});
 document.getElementById("loadUsers").addEventListener("click", loadUsers);
 document.getElementById("loadPokemon").addEventListener("click", loadPokemon);
-
-
-//<p><strong>special-attack:</strong> ${stats["special-attack"]}</p>

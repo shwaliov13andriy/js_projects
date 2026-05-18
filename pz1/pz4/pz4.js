@@ -6,11 +6,10 @@ const addTaskButton = document.querySelector("#addTask");
 const taskList = document.getElementById("taskList");
 const deleteTaskButton = document.getElementById("deleteTask");
 const mainTitle = document.querySelector("h1");
-const deleteTaskButton2 = document.getElementById("deleteTask2");
-const mainTitle2 = document.querySelector("h2");
+
 
 const deleteTask3 = document.getElementById("da");
-const abc = document.querySelector("h3")
+
 
 console.log(taskInput, addTaskButton, taskList);
 
@@ -69,10 +68,3 @@ deleteTaskButton2.addEventListener("click", function (){
     mainTitle2.remove();
   }
 });
-
-deleteTask3.addEventListener("click", function (){
-  if(abc){
-    console.log("delete h3:", abc.textContent);
-    abc.remove();
-  }
-})
