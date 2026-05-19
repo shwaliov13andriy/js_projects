@@ -48,6 +48,7 @@ async function loadPokemon() {
         <p><strong>speed:</strong> ${stats.speed}</p>
         <p><strong>rarirty:</strong> ${data.base_experience}</p>
         <p><strong>special attack:</strong> ${stats["special-attack"]}</p>
+        <p><strong>total pokemon:</strong> ${data.count}</p>
       </div>
     `;
     document.getElementById("pokemonCard").innerHTML = card;

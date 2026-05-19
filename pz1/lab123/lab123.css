@@ -1,0 +1,30 @@
+#createResume{
+    width: 100px;
+    height: 40px;
+    background: #863522;
+    color: #a8b2b3;
+    display: flex;
+    border-radius: 5%;
+    
+
+}
+#editResume{
+    width: 100px;
+    height: 40px;
+    background: #863522;
+    color: #a8b2b3;
+    display: flex;
+    border-radius: 5%;
+}
+#resumeOutput{
+    color: #863522;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #a8b2b3;
+    width: 20%;
+    border-radius: 5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
